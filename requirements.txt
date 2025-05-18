@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+facenet-pytorch
+torch
+Pillow
+scikit-learn
+numpy
+jupyterlab
+pydantic
+pydantic-settings
