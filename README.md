@@ -48,6 +48,13 @@ I return appropriate error messages to handle commonly anticipated issues.
 
 Docker installed (or Python 3.8+ if running locally).
 
+#### 0. Clone repo
+
+```
+git clone https://github.com/amolmane1/spring_takehome.git
+cd spring_takehome
+```
+
 #### 1. Build & Generate Data in Docker
 
 At the root of the repo, build the image:
