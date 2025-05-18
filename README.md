@@ -71,7 +71,7 @@ Test using FastAPI UI:
 Go to:
 
 ```
-http://localhost/docs#/default/predict_predict_post
+http://localhost:80/docs#/default/predict_predict_post
 ```
 
 Test using curl:
