@@ -6,26 +6,10 @@ This project provides a FastAPI-based REST service that estimates a person’s n
 
 #### Project Layout:
 
-SPRING_TAKEHOME/
-├── app/
+There are 2 main folders - app/ and data/.
 
-│ ├── generate_data.py
-
-│ └── main.py
-
-├── data/
-
-│ ├── amol.jpg
-
-│ ├── reference_data.json
-
-│ └── room.jpg
-
-├── Dockerfile
-
-├── README.md
-
-└── requirements.txt
+- app/ contains `generate_data.py` to generate a reference dataset, and `main.py` contains code for the fastapi endpoint.
+- data/ contains the reference dataset (`reference_data.json`) and 2 sample images to use for testing.
 
 #### Dockerized Build & Bake-in Data:
 
@@ -52,7 +36,7 @@ I return appropriate error messages to handle commonly anticipated issues.
 #### Similarity & Estimation Logic:
 
 - Cosine similarity between input embedding and all reference embeddings.
-- Top-3 most similar individuals retrieved; their net worths are averaged using the similarity scores as weights.
+- Top-3 most similar individuals retrieved; their net worths are averaged using the similarity scores as weights. This average is used as the estimated net worth of the person in the input picture.
 
 #### Caching:
 
@@ -82,8 +66,6 @@ docker run -d \
 ```
 
 3. Test the Endpoint
-
-I have my own selfie (amol.jpg) and a picture of a room (room.jpg) in the data folder. You can use that to test the endpoint.
 
 Test using FastAPI UI:
 Go to:
