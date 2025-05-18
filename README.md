@@ -4,18 +4,27 @@ This project provides a FastAPI-based REST service that estimates a person’s n
 
 ## Architecture Decisions
 
-#### Projeect Layout:
+#### Project Layout:
 
 SPRING_TAKEHOME/
 ├── app/
+
 │ ├── generate_data.py
+
 │ └── main.py
+
 ├── data/
+
 │ ├── amol.jpg
+
 │ ├── reference_data.json
+
 │ └── room.jpg
+
 ├── Dockerfile
+
 ├── README.md
+
 └── requirements.txt
 
 #### Dockerized Build & Bake-in Data:
@@ -26,6 +35,14 @@ I have pre generated the reference_data.json (it takes a long time to run) so th
 #### FastAPI:
 
 - Chosen for simplicity and performance in serving a lightweight REST API.
+
+#### Pydantic
+
+I used Pydantic models to validate the inputs to the endpoint
+
+#### Error handling
+
+I return appropriate error messages to handle commonly anticipated issues.
 
 #### Face Processing & Embedding:
 
