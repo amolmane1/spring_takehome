@@ -74,6 +74,8 @@ Go to:
 http://localhost:80/docs#/default/predict_predict_post
 ```
 
+Click on `Try it out` and upload any image (you can use the sample jpgs in the /data folder!).
+
 Test using curl:
 
 ```
