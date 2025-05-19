@@ -4,6 +4,8 @@ This project provides a FastAPI-based REST service that estimates a person’s n
 
 ## Architecture Decisions
 
+High level, my approach was to generate an embedding for the selfie using MTCNN and InceptionResnetV1, get the 3 most similar people (from the reference dataset) by cosine similarity to their face embeddings, and get the average of their net worths (weighted by their similarity score) to get the estimated net worth of the person in the input selfie.
+
 #### Project Layout:
 
 ```text
