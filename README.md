@@ -6,19 +6,21 @@ This project provides a FastAPI-based REST service that estimates a person’s n
 
 #### Project Layout:
 
+```text
 spring_takehome/ ← project root
 ├── app/ ← application code
-│ ├── generate_data.py ← script to build reference_data.json
-│ ├── main.py ← FastAPI entrypoint
-│ ├── schemas.py ← Pydantic request/response models
-│ ├── services.py ← face-processing & prediction logic
-│ ├── settings.py ← config via Pydantic BaseSettings
-│ └── init.py
+│   ├── generate_data.py ← script to build reference_data.json
+│   ├── main.py ← FastAPI entrypoint
+│   ├── schemas.py ← Pydantic request/response models
+│   ├── services.py ← face-processing & prediction logic
+│   ├── settings.py ← config via Pydantic BaseSettings
+│   └── __init__.py
 ├── data/ ← baked-in reference data (`reference_data.json`) + sample images
 ├── .gitignore
 ├── Dockerfile
 ├── README.md
 └── requirements.txt
+```
 
 #### Dockerized Build & Bake-in Data:
 
