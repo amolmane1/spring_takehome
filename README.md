@@ -37,7 +37,7 @@ spring_takehome/ ← project root
 
 #### Error handling
 
-- All inputs and outputs are validated via Pydantic models in `schemas.py`.
+- Returns clear HTTP status codes and messages for unsupported file types, invalid images, and “no face detected.”
 
 #### Face Processing & Embedding:
 
