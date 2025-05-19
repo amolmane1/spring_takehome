@@ -6,15 +6,24 @@ This project provides a FastAPI-based REST service that estimates a person’s n
 
 #### Project Layout:
 
-There are 2 main folders - app/ and data/.
-
-- app/ contains `generate_data.py` to generate a reference dataset, and `main.py` contains code for the fastapi endpoint.
-- data/ contains the reference dataset (`reference_data.json`) and 2 sample images to use for testing.
+spring_takehome/ ← project root
+├── app/ ← application code
+│ ├── generate_data.py ← script to build reference_data.json
+│ ├── main.py ← FastAPI entrypoint
+│ ├── schemas.py ← Pydantic request/response models
+│ ├── services.py ← face-processing & prediction logic
+│ ├── settings.py ← config via Pydantic BaseSettings
+│ └── init.py
+├── data/ ← baked-in reference data (`reference_data.json`) + sample images
+├── .gitignore
+├── Dockerfile
+├── README.md
+└── requirements.txt
 
 #### Dockerized Build & Bake-in Data:
 
-I've used docker for reliable reproducibility.
-I have pre generated the reference_data.json (it takes a long time to run) so that you don't have to. The code to generate reference_data.json is in app/generate_data.py.
+- I've used docker for reliable reproducibility.
+- I have pre generated the reference_data.json (it takes a long time to run) so that you don't have to. The code to generate reference_data.json is in app/generate_data.py.
 
 #### FastAPI:
 
@@ -22,11 +31,11 @@ I have pre generated the reference_data.json (it takes a long time to run) so th
 
 #### Pydantic
 
-I used Pydantic models to validate the inputs to the endpoint
+- All inputs and outputs are validated via Pydantic models in `schemas.py`.
 
 #### Error handling
 
-I return appropriate error messages to handle commonly anticipated issues.
+- All inputs and outputs are validated via Pydantic models in `schemas.py`.
 
 #### Face Processing & Embedding:
 
@@ -40,7 +49,7 @@ I return appropriate error messages to handle commonly anticipated issues.
 
 #### Caching:
 
-- @lru_cache on settings loader, and reference-data loader to avoid repeated I/O and model re-instantiation per request.
+- `@lru_cache()` on settings loader, model loader, and reference loader to avoid repeated disk I/O and model instantiation on each request.
 
 ## How to Run / Deploy
 
