@@ -12,7 +12,9 @@ COPY data/reference_data.json /app/data/reference_data.json
 COPY . .
 
 # 4) Expose FastAPI port
-EXPOSE 8080
+# EXPOSE 8080
+EXPOSE 10000
 
 # 5) Launch FastAPI
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+# CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["bash","-lc","uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
