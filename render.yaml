@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: spring_takehome
+    env: docker
+    dockerfilePath: ./Dockerfile
+    port: 10000
