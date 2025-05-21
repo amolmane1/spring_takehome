@@ -81,7 +81,8 @@ docker build -t wealth-estimator .
 ```
 docker run -d \
   --name wealth-dev \
-  -p 80:80 \
+  -p 10000:10000 \
+  -e PORT=10000 \
   wealth-estimator:latest
 ```
 
@@ -91,7 +92,7 @@ Test using FastAPI UI:
 Go to:
 
 ```
-http://localhost:80/docs#/default/predict_predict_post
+http://localhost:10000/docs#/default/predict_predict_post
 ```
 
 Click on `Try it out` and upload any image (you can use the sample jpgs in the /data folder!).
@@ -99,7 +100,7 @@ Click on `Try it out` and upload any image (you can use the sample jpgs in the /
 Test using curl:
 
 ```
-curl -X POST "http://localhost/predict" \
+curl -X POST "http://localhost:10000/predict" \
  -F "file=@/path/to/your_image.jpg" \
  -H "Accept: application/json"
 ```
